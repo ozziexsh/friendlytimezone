@@ -1,0 +1,13 @@
+{
+    "name": "nehero/friendlytimezone",
+    "description": "Friendly timezones for php",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ozzie Neher",
+            "email": "oz.neher@gmail.com"
+        }
+    ],
+    "require": {}
+}
