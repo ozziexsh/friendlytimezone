@@ -7,13 +7,12 @@ class FriendlyTimezone
 	/**
 	 * @var array
 	 */
-	public $timezones = [
+	private $timezones = [
 		//"(GMT-12:00) International Date Line West" => "" ,
 		"(GMT-11:00) Midway Island, Samoa" => "Pacific/Midway",
 		"(GMT-10:00) Hawaii" => "Pacific/Honolulu",
 		"(GMT-09:00) Alaska" => "America/Anchorage",
-		"(GMT-08:00) Pacific Time (US and Canada); Tijuana" => "America/Tijuana",
-		"(GMT-08:00) Tijuana, Baja California" => "America/Tijuana",
+		"(GMT-08:00) Pacific Time (US and Canada); Tijuana, Baja California" => "America/Tijuana",
 		"(GMT-07:00) Mountain Time (US and Canada)" => "America/Edmonton",
 		"(GMT-07:00) Chihuahua, La Paz, Mazatlan" => "America/Chihuahua",
 		"(GMT-07:00) Arizona" => "America/Phoenix",
@@ -32,8 +31,7 @@ class FriendlyTimezone
 		"(GMT-04:00) Asuncion" => "America/Asuncion",
 		"(GMT-03:30) Newfoundland" => "America/St_Johns",
 		"(GMT-03:00) Brasilia" => "America/Sao_Paulo",
-		"(GMT-03:00) Buenos Aires" => "America/Argentina/Buenos_Aires",
-		"(GMT-03:00) Georgetown" => "America/Argentina/Buenos_Aires",
+		"(GMT-03:00) Buenos Aires, Georgetown" => "America/Argentina/Buenos_Aires",
 		"(GMT-03:00) Greenland" => "America/Godthab",
 		"(GMT-03:00) Montevideo" => "America/Montevideo",
 		"(GMT-02:00) Mid-Atlantic" => "Atlantic/South_Georgia",

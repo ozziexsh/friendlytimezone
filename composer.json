@@ -9,5 +9,10 @@
             "email": "oz.neher@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-0": {
+            "nehero": "src/"
+        }
+    }
 }
