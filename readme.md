@@ -25,7 +25,7 @@ Example HTML usage
 ```html
 <select name="timezones">
 	<?php foreach($timezones as $label => $value): ?>
-		<option value="<?php echo $value; ?>"><?php echo $label; ?>
+		<option value="<?php echo $value; ?>"><?php echo $label; ?></option>
 	<?php endforeach; ?>
 </select>
 ```
