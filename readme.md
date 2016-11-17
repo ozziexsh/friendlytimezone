@@ -22,7 +22,7 @@ $timezones = FriendlyTimezone::list();
 ```
 
 Example HTML usage
-```php
+```html
 <select name="timezones">
 	<?php foreach($timezones as $label => $value): ?>
 		<option value="<?php echo $value; ?>"><?php echo $label; ?>
