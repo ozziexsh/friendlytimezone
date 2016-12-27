@@ -4,106 +4,195 @@ namespace nehero;
 
 class FriendlyTimezone 
 {
-	/**
-	 * @var array
-	 */
-	private $timezones = [
-		//"(GMT-12:00) International Date Line West" => "" ,
-		"(GMT-11:00) Midway Island, Samoa" => "Pacific/Midway",
-		"(GMT-10:00) Hawaii" => "Pacific/Honolulu",
-		"(GMT-09:00) Alaska" => "America/Anchorage",
-		"(GMT-08:00) Pacific Time (US and Canada); Tijuana, Baja California" => "America/Tijuana",
-		"(GMT-07:00) Mountain Time (US and Canada)" => "America/Edmonton",
-		"(GMT-07:00) Chihuahua, La Paz, Mazatlan" => "America/Chihuahua",
-		"(GMT-07:00) Arizona" => "America/Phoenix",
-		"(GMT-06:00) Central Time (US and Canada)" => "America/Chicago",
-		"(GMT-06:00) Saskatchewan" => "America/Regina",
-		"(GMT-06:00) Guadalajara, Mexico City, Monterrey" => "America/Mexico_City",
-		"(GMT-06:00) Central America" => "America/Managua",
-		"(GMT-05:00) Eastern Time (US and Canada)" => "America/New_York",
-		"(GMT-05:00) Indiana (East)" => "America/Indiana/Indianapolis",
-		"(GMT-05:00) Bogota, Lima, Quito" => "America/Bogota",
-		"(GMT-04:30) Caracas" => "America/Caracas",
-		"(GMT-04:00) Atlantic Time (Canada)" => "America/Halifax",
-		"(GMT-04:00) Georgetown, La Paz, San Juan" => "America/Argentina/San_Juan",
-		"(GMT-04:00) Santiago" => "America/Santiago",
-		"(GMT-04:00) Manaus" => "America/Manaus",
-		"(GMT-04:00) Asuncion" => "America/Asuncion",
-		"(GMT-03:30) Newfoundland" => "America/St_Johns",
-		"(GMT-03:00) Brasilia" => "America/Sao_Paulo",
-		"(GMT-03:00) Buenos Aires, Georgetown" => "America/Argentina/Buenos_Aires",
-		"(GMT-03:00) Greenland" => "America/Godthab",
-		"(GMT-03:00) Montevideo" => "America/Montevideo",
-		"(GMT-02:00) Mid-Atlantic" => "Atlantic/South_Georgia",
-		"(GMT-01:00) Azores" => "Atlantic/Azores",
-		"(GMT-01:00) Cape Verde Islands" => "Atlantic/Cape_Verde",
-		"(GMT) Greenwich Mean Time: Dublin, Edinburgh, Lisbon, London" => "Europe/London",
-		"(GMT) Monrovia, Reykjavik" => "Atlantic/Reykjavik",
-		"(GMT) Casablanca" => "Africa/Casablanca",
-		"(GMT) Coordinated Universal Time" => "UTC",
-		"(GMT+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague" => "Europe/Belgrade",
-		"(GMT+01:00) Sarajevo, Skopje, Warsaw, Zagreb" => "Europe/Sarajevo",
-		"(GMT+01:00) Brussels, Copenhagen, Madrid, Paris" => "Europe/Paris",
-		"(GMT+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna" => "Europe/Berlin",
-		"(GMT+01:00) West Central Africa" => "Africa/Lagos",
-		"(GMT+02:00) Amman" => "Asia/Amman",
-		"(GMT+02:00) Beirut" => "Asia/Beirut",
-		"(GMT+02:00) Cairo" => "Africa/Cairo",
-		"(GMT+02:00) Minsk" => "Europe/Minsk",
-		"(GMT+02:00) Helsinki, Kiev, Riga, Sofia, Tallinn, Vilnius" => "Europe/Helsinki",
-		"(GMT+02:00) Athens, Bucharest, Istanbul" => "Europe/Athens",
-		"(GMT+02:00) Jerusalem" => "Asia/Jerusalem",
-		"(GMT+02:00) Harare, Pretoria" => "Africa/Harare",
-		"(GMT+02:00) Windhoek" => "Africa/Windhoek",
-		"(GMT+03:00) Moscow, St. Petersburg, Volgograd" => "Europe/Moscow",
-		"(GMT+03:00) Kuwait, Riyadh" => "Asia/Kuwait",
-		"(GMT+03:00) Nairobi" => "Africa/Nairobi",
-		"(GMT+03:00) Baghdad" => "Asia/Baghdad",
-		"(GMT+03:00) Tbilisi" => "Asia/Tbilisi",
-		"(GMT+03:30) Tehran" => "Asia/Tehran",
-		"(GMT+04:00) Abu Dhabi, Muscat" => "Asia/Muscat",
-		"(GMT+04:00) Baku, Tbilisi, Yerevan" => "Asia/Baku",
-		"(GMT+04:00) Yerevan" => "Asia/Yerevan",
-		"(GMT+04:00) Port Louis" => "Indian/Mauritius",
-		"(GMT+04:30) Kabul" => "Asia/Kabul",
-		"(GMT+05:00) Ekaterinburg" => "Asia/Yekaterinburg",
-		"(GMT+05:00) Tashkent" => "Asia/Tashkent",
-		"(GMT+05:00) Islamabad, Karachi" => "Asia/Karachi",
-		"(GMT+05:30) Chennai, Kolkata, Mumbai, New Delhi" => "Asia/Kolkata",
-		"(GMT+05:45) Kathmandu" => "Asia/Kathmandu",
-		"(GMT+06:00) Astana, Dhaka" => "Asia/Dhaka",
-		"(GMT+06:00) Sri Jayawardenepura" => "Asia/Colombo",
-		"(GMT+06:00) Almaty, Novosibirsk" => "Asia/Almaty",
-		"(GMT+06:30) Yangon (Rangoon)" => "Asia/Rangoon",
-		"(GMT+07:00) Bangkok, Hanoi, Jakarta" => "Asia/Bangkok",
-		"(GMT+07:00) Krasnoyarsk" => "Asia/Krasnoyarsk",
-		"(GMT+08:00) Beijing, Chongqing, Hong Kong, Urumqi" => "Asia/Hong_Kong",
-		"(GMT+08:00) Kuala Lumpur, Singapore" => "Asia/Kuala_Lumpur",
-		"(GMT+08:00) Taipei" => "Asia/Taipei",
-		"(GMT+08:00) Perth" => "Australia/Perth",
-		"(GMT+08:00) Irkutsk, Ulaanbaatar" => "Asia/Irkutsk",
-		"(GMT+09:00) Seoul" => "Asia/Seoul",
-		"(GMT+09:00) Osaka, Sapporo, Tokyo" => "Asia/Tokyo",
-		"(GMT+09:00) Yakutsk" => "Asia/Yakutsk",
-		"(GMT+09:30) Darwin" => "Australia/Darwin",
-		"(GMT+09:30) Adelaide" => "Australia/Adelaide",
-		"(GMT+10:00) Canberra, Melbourne, Sydney" => "Australia/Sydney",
-		"(GMT+10:00) Brisbane" => "Australia/Brisbane",
-		"(GMT+10:00) Hobart" => "Australia/Hobart",
-		"(GMT+10:00) Vladivostok" => "Asia/Vladivostok",
-		"(GMT+10:00) Guam, Port Moresby" => "Pacific/Guam",
-		"(GMT+11:00) Magadan, Solomon Islands, New Caledonia" => "Asia/Magadan",
-		"(GMT+12:00) Fiji, Kamchatka, Marshall Is." => "Pacific/Fiji",
-		"(GMT+12:00) Auckland, Wellington" => "Pacific/Auckland",
-		"(GMT+12:00) Petropavlovsk-Kamchatsky" => "Asia/Kamchatka",
-		"(GMT+13:00) Nuku'alofa" => "Pacific/Tongatapu",
-	];
+    /**
+     * @var array
+     */
+    private static $lookup = [
+        "Pacific/Midway" => "Midway Island, Samoa",
+        "Pacific/Honolulu" => "Hawaii",
+        "America/Anchorage" => "Alaska",
+        "America/Tijuana" => "Pacific Time (US and Canada); Tijuana, Baja California",
+        "America/Edmonton" => "Mountain Time (US and Canada)",
+        "America/Chihuahua" => "Chihuahua, La Paz, Mazatlan",
+        "America/Phoenix" => "Arizona",
+        "America/Chicago" => "Central Time (US and Canada)",
+        "America/Regina" => "Saskatchewan",
+        "America/Mexico_City" => "Guadalajara, Mexico City, Monterrey",
+        "America/Managua" => "Central America",
+        "America/New_York" => "Eastern Time (US and Canada)",
+        "America/Indiana/Indianapolis" => "Indiana (East)",
+        "America/Bogota" => "Bogota, Lima, Quito",
+        "America/Caracas" => "Caracas",
+        "America/Halifax" => "Atlantic Time (Canada)",
+        "America/Argentina/San_Juan" => "Georgetown, La Paz, San Juan",
+        "America/Santiago" => "Santiago",
+        "America/Manaus" => "Manaus",
+        "America/Asuncion" => "Asuncion",
+        "America/St_Johns" => "Newfoundland",
+        "America/Sao_Paulo" => "Brasilia",
+        "America/Argentina/Buenos_Aires" => "Buenos Aires, Georgetown",
+        "America/Godthab" => "Greenland",
+        "America/Montevideo" => "Montevideo",
+        "Atlantic/South_Georgia" => "Mid-Atlantic",
+        "Atlantic/Azores" => "Azores",
+        "Atlantic/Cape_Verde" => "Cape Verde Islands",
+        "Europe/London" => "Greenwich Mean Time: Dublin, Edinburgh, Lisbon, London",
+        "Atlantic/Reykjavik" => "Monrovia, Reykjavik",
+        "Africa/Casablanca" => "Casablanca",
+        "UTC" => "Coordinated Universal Time",
+        "Europe/Belgrade" => "Belgrade, Bratislava, Budapest, Ljubljana, Prague",
+        "Europe/Sarajevo" => "Sarajevo, Skopje, Warsaw, Zagreb",
+        "Europe/Paris" => "Brussels, Copenhagen, Madrid, Paris",
+        "Europe/Berlin" => "Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna",
+        "Africa/Lagos" => "West Central Africa",
+        "Asia/Amman" => "Amman",
+        "Asia/Beirut" => "Beirut",
+        "Africa/Cairo" => "Cairo",
+        "Europe/Minsk" => "Minsk",
+        "Europe/Helsinki" => "Helsinki, Kiev, Riga, Sofia, Tallinn, Vilnius",
+        "Europe/Athens" => "Athens, Bucharest, Istanbul",
+        "Asia/Jerusalem" => "Jerusalem",
+        "Africa/Harare" => "Harare, Pretoria",
+        "Africa/Windhoek" => "Windhoek",
+        "Europe/Moscow" => "Moscow, St. Petersburg, Volgograd",
+        "Asia/Kuwait" => "Kuwait, Riyadh",
+        "Africa/Nairobi" => "Nairobi",
+        "Asia/Baghdad" => "Baghdad",
+        "Asia/Tbilisi" => "Tbilisi",
+        "Asia/Tehran" => "Tehran",
+        "Asia/Muscat" => "Abu Dhabi, Muscat",
+        "Asia/Baku" => "Baku, Tbilisi, Yerevan",
+        "Asia/Yerevan" => "Yerevan",
+        "Indian/Mauritius" => "Port Louis",
+        "Asia/Kabul" => "Kabul",
+        "Asia/Yekaterinburg" => "Ekaterinburg",
+        "Asia/Tashkent" => "Tashkent",
+        "Asia/Karachi" => "Islamabad, Karachi",
+        "Asia/Kolkata" => "Chennai, Kolkata, Mumbai, New Delhi",
+        "Asia/Kathmandu" => "Kathmandu",
+        "Asia/Dhaka" => "Astana, Dhaka",
+        "Asia/Colombo" => "Sri Jayawardenepura",
+        "Asia/Almaty" => "Almaty, Novosibirsk",
+        "Asia/Rangoon" => "Yangon (Rangoon)",
+        "Asia/Bangkok" => "Bangkok, Hanoi, Jakarta",
+        "Asia/Krasnoyarsk" => "Krasnoyarsk",
+        "Asia/Hong_Kong" => "Beijing, Chongqing, Hong Kong, Urumqi",
+        "Asia/Kuala_Lumpur" => "Kuala Lumpur, Singapore",
+        "Asia/Taipei" => "Taipei",
+        "Australia/Perth" => "Perth",
+        "Asia/Irkutsk" => "Irkutsk, Ulaanbaatar",
+        "Asia/Seoul" => "Seoul",
+        "Asia/Tokyo" => "Osaka, Sapporo, Tokyo",
+        "Asia/Yakutsk" => "Yakutsk",
+        "Australia/Darwin" => "Darwin",
+        "Australia/Adelaide" => "Adelaide",
+        "Australia/Sydney" => "Canberra, Melbourne, Sydney",
+        "Australia/Brisbane" => "Brisbane",
+        "Australia/Hobart" => "Hobart",
+        "Asia/Vladivostok" => "Vladivostok",
+        "Pacific/Guam" => "Guam, Port Moresby",
+        "Asia/Magadan" => "Magadan, Solomon Islands, New Caledonia",
+        "Pacific/Fiji" => "Fiji, Kamchatka, Marshall Is.",
+        "Pacific/Auckland" => "Auckland, Wellington",
+        "Asia/Kamchatka" => "Petropavlovsk-Kamchatsky",
+        "Pacific/Tongatapu" => "Nuku'alofa",
+    ];
 
-	/**
-	 * @return array
-	 */
-	public static function list()
-	{
-		return self::$timezones;
-	}
+    /**
+     * Returns the list of timezones
+     * @return array
+     */
+	public static function get($opts = [])
+    {
+        if (empty($opts['order']) || !in_array($opts['order'], ['asc', 'desc'])) {
+            $opts['order'] = 'asc';
+        } else {
+            $opts['order'] = strtolower($opts['order']);
+        }
+
+        $offsets = [];
+
+        // Store the offsets with their tz as
+        // America/Regina => -6
+        foreach (self::$lookup as $tz => $label) {
+            $offsets[$tz] = self::offset($tz);
+        }
+
+
+        // Sort by offset value
+        uasort($offsets, function($a, $b) use ($opts) {
+            $a = (float) $a;
+            $b = (float) $b;
+
+            if ($a == $b) {
+                return 0;
+            }
+
+            if ($opts['order'] == 'asc') {
+                return $a > $b ? 1 : -1;
+            } else if ($opts['order'] == 'desc') {
+                return $a > $b ? -1 : 1;
+            }
+
+            return 0;
+        });
+
+        // Place labels
+        $timezones = [];
+        foreach ($offsets as $tz => $offset) {
+            $timezones["(GMT" . self::formatNumberToTime($offset) . ") " . self::$lookup[$tz]] = $tz;
+        }
+
+        return $timezones;
+    }
+
+    /**
+     * Takes a number, returns the string time (or the input back if not a number)
+     * Includes +/- symbols
+     *
+     * @param $number
+     * @return float|string
+     */
+    private static function formatNumberToTime($number)
+    {
+        if (is_int($number)) {
+            $number .= ':00';
+        } else if (is_float($number)) {
+
+            $n = $number; // eg 1.25
+            $whole = floor($n);      // 1
+            $fraction = $n - $whole; // .25
+
+            $number = $whole;
+
+            $number .= ':' . (60 / (1 / $fraction));
+        }
+
+        if ($number >= 0) {
+            $number = '+' . $number;
+        }
+
+        return $number;
+    }
+
+    /**
+     * https://gist.github.com/glueckpress/ec01c763e2e7e5349300
+     * Prints a string showing current time zone offset to UTC, considering daylight savings time.
+     *
+     * @link                     http://php.net/manual/en/timezones.php
+     * @param  string $time_zone Time zone name
+     * @return float|int            Offset in hours, prepended by +/-
+     */
+    private static function offset($time_zone) {
+        // Set UTC as default time zone.
+        date_default_timezone_set( 'UTC' );
+        $utc = new \DateTime();
+
+        // Calculate offset.
+        $current   = timezone_open( $time_zone );
+        $offset_s  = timezone_offset_get( $current, $utc ); // seconds
+        $offset_h  = $offset_s / ( 60 * 60 ); // hours
+
+        return $offset_h;
+    }
 }

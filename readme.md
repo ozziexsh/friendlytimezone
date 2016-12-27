@@ -15,10 +15,23 @@ If you have a better suggestion for some of the mapped regions, please submit a 
 ```php
 use nehero/FriendlyTimezone;
 
-// Returns a key => value list of the timezones
-// Key is the label
-// Value is the PHP mapped timezone value
-$timezones = FriendlyTimezone::list();
+// If no options are passed to get(), values are sorted by `asc` GMT offset value
+$timezones = FriendlyTimezone::get();
+
+// You can also optionally pass an array of options
+// ex.
+$timezones = FriendlyTimezone::get([ 'order' => 'desc' ]);
+
+/**
+ * $timezones is an associative array in the format
+ * Friendly Label => Php Timezone String
+ *
+ * ex.
+ * [
+ *   '(GMT-6:00) Saskatchewan' => 'America/Regina'
+ * ]
+ */
+
 ```
 
 Example HTML usage
