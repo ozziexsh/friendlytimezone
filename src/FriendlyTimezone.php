@@ -185,8 +185,7 @@ class FriendlyTimezone
      */
     private static function offset($time_zone) {
         // Set UTC as default time zone.
-        date_default_timezone_set( 'UTC' );
-        $utc = new \DateTime();
+        $utc = new \DateTime('now', new \DateTimeZone('UTC'));
 
         // Calculate offset.
         $current   = timezone_open( $time_zone );
