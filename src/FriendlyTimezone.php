@@ -2,7 +2,10 @@
 
 namespace nehero;
 
-class FriendlyTimezone 
+use DateTime;
+use DateTimeZone;
+
+class FriendlyTimezone
 {
     /**
      * @var array
@@ -185,11 +188,11 @@ class FriendlyTimezone
      */
     private static function offset($time_zone) {
         // Set UTC as default time zone.
-        $utc = new \DateTime('now', new \DateTimeZone('UTC'));
+        $utc = new DateTime('now', new DateTimeZone('UTC'));
 
         // Calculate offset.
-        $current   = timezone_open( $time_zone );
-        $offset_s  = timezone_offset_get( $current, $utc ); // seconds
+        $current   = new DateTimeZone($time_zone);
+        $offset_s  = $current->getOffset($utc); // seconds
         $offset_h  = $offset_s / ( 60 * 60 ); // hours
 
         return $offset_h;
