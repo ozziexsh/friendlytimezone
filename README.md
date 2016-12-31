@@ -13,7 +13,15 @@ If you have a better suggestion for some of the mapped regions, please submit a 
 `composer install nehero/friendlytimezone`
 
 ```php
-use nehero/FriendlyTimezone;
+
+// autoload / require_once the file here
+require_once __DIR__ . '/vendor/autoload.php';
+
+// If you want for dependency injection / OO
+// use Nehero\FriendlyTimezone;
+
+// But it's easiest to use statically
+use Nehero\FriendlyTimezone\Facade as FriendlyTimezone;
 
 // If no options are passed to get(), values are sorted by `asc` GMT offset value
 $timezones = FriendlyTimezone::get();
@@ -21,6 +29,7 @@ $timezones = FriendlyTimezone::get();
 // You can also optionally pass an array of options
 // ex.
 $timezones = FriendlyTimezone::get([ 'order' => 'desc' ]);
+$timezones = FriendlyTimezone::get([ 'order' => 'asc' ]);
 
 /**
  * $timezones is an associative array in the format
