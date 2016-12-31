@@ -124,7 +124,7 @@ class FriendlyTimezone
      * @param array $opts
      * @return string[]
      */
-	public function get(array $opts = [])
+    public function get(array $opts = [])
     {
         if (empty($opts['order']) || !in_array($opts['order'], ['asc', 'desc'])) {
             $opts['order'] = 'asc';
