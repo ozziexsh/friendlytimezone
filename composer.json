@@ -12,8 +12,8 @@
     "require": {},
     "minimum-stability": "dev",
     "autoload": {
-        "psr-0": {
-            "Nehero": "src/"
+        "psr-4": {
+            "Nehero\\": "src/"
         }
     }
 }
