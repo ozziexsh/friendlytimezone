@@ -6,7 +6,7 @@ use Illuminate\Support\Collection;
 
 class FriendlyTimezone
 {
-  private static $lookup = [
+  public static $lookup = [
     'Pacific/Midway' => 'Midway Island, Samoa',
     'Pacific/Honolulu' => 'Hawaii',
     'America/Anchorage' => 'Alaska',
@@ -98,7 +98,7 @@ class FriendlyTimezone
     'Pacific/Tongatapu' => "Nuku'alofa",
   ];
 
-  public static function timezones()
+  public static function timezones(): Collection
   {
     return collect(self::$lookup)
       ->map(
@@ -107,6 +107,6 @@ class FriendlyTimezone
           friendlyName: $label
         )
       )
-      ->sortBy(fn($tz) => $tz->offset);
+      ->sortBy(fn(Timezone $tz) => $tz->offset);
   }
 }

@@ -1,6 +1,6 @@
 The MIT License (MIT)
 
-Copyright (c) nehero <hello@ozzie.sh>
+Copyright (c) Ozzie Neher <hello@ozzie.sh>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

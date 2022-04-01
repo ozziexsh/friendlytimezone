@@ -2,6 +2,9 @@
 
 All notable changes to `friendlytimezone` will be documented in this file.
 
-## 1.0.0 - 202X-XX-XX
+## 3.0.0 - 2022-04-01
 
-- initial release
+- Refactored library to provide more flexibility
+- Bumped PHP to minimum 8.0
+- Support modern package autoloading conventions
+
