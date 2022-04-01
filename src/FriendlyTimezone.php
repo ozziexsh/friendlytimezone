@@ -107,6 +107,7 @@ class FriendlyTimezone
           friendlyName: $label
         )
       )
+      ->values()
       ->sortBy(fn(Timezone $tz) => $tz->offset);
   }
 }
