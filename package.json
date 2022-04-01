@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "@prettier/plugin-php": "^0.18.4",
+    "prettier": "^2.6.1"
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "tabs": false,
+    "tabWidth": 2,
+    "trailingComma": "all",
+    "printWidth": 80,
+    "arrowParens": "avoid"
+  }
+}

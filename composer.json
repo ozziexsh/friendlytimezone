@@ -1,0 +1,49 @@
+{
+  "name": "nehero/friendlytimezone",
+  "description": "Display timezones to your users in a friendly way using locations as names",
+  "keywords": [
+    "nehero",
+    "ozzie",
+    "ozziexsh",
+    "timezone",
+    "friendlytimezone"
+  ],
+  "homepage": "https://github.com/ozziexsh/friendlytimezone",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ozzie Neher",
+      "email": "hello@ozzie.sh",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^8.0",
+    "illuminate/collections": "^9.6"
+  },
+  "require-dev": {
+    "pestphp/pest": "^1.20"
+  },
+  "autoload": {
+    "psr-4": {
+      "Nehero\\FriendlyTimezone\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Nehero\\FriendlyTimezone\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/pest",
+    "test-coverage": "vendor/bin/pest --coverage"
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
