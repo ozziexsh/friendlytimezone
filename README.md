@@ -1,8 +1,8 @@
 # User-friendly timezones for PHP 
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/nehero/friendlytimezone.svg?style=flat-square)](https://packagist.org/packages/nehero/friendlytimezone)
-[![Tests](https://github.com/nehero/friendlytimezone/actions/workflows/run-tests.yml/badge.svg?branch=main)](https://github.com/ozziexsh/friendlytimezone/actions/workflows/run-tests.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/nehero/friendlytimezone.svg?style=flat-square)](https://packagist.org/packages/nehero/friendlytimezone)
+[![Tests](https://github.com/ozziexsh/friendlytimezone/actions/workflows/run-tests.yml/badge.svg?branch=main)](https://github.com/ozziexsh/friendlytimezone/actions/workflows/run-tests.yml)
 
 List extracted from [Microsoft Time Zone Index Values](https://support.microsoft.com/en-ca/kb/973627).
 
