@@ -108,6 +108,7 @@ class FriendlyTimezone
         )
       )
       ->values()
-      ->sortBy(fn(Timezone $tz) => $tz->offset);
+      ->sortBy(fn(Timezone $tz) => $tz->offset)
+      ->values();
   }
 }
